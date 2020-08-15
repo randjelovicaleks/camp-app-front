@@ -1,11 +1,10 @@
 <template>
   <v-app>
-
+    <router-view></router-view>
   </v-app>
 </template>
 
 <script>
-
 export default {
   name: 'App',
 
@@ -17,3 +16,9 @@ export default {
   }),
 };
 </script>
+
+<style>
+  ::-webkit-scrollbar {
+    display: none;
+  }
+</style>

@@ -1,4 +1,6 @@
-# camp-app-front
+# Camping Application Frontend
+
+This is frontend for camping application. This is written in Vue.js using Vuetify.
 
 ## Project setup
 ```

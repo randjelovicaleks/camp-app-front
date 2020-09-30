@@ -126,7 +126,7 @@
                   ></v-text-field>
                   </ValidationProvider>
                 </template>
-                <v-date-picker color="#137547" v-model="openingDate" scrollable>
+                <v-date-picker color="#137547" v-model="openingDate" scrollable :min="new Date().toISOString()">
                   <v-spacer></v-spacer>
                   <v-btn text color="#137547" @click="modal = false">Cancel</v-btn>
                   <v-btn text color="#137547" @click="$refs.dialog.save(openingDate)">OK</v-btn>
@@ -161,7 +161,7 @@
                   ></v-text-field>
                   </ValidationProvider>
                 </template>
-                <v-date-picker color="#137547" v-model="closingDate" scrollable>
+                <v-date-picker color="#137547" v-model="closingDate" scrollable :min="new Date().toISOString()">
                   <v-spacer></v-spacer>
                   <v-btn text color="#137547" @click="modal2 = false">Cancel</v-btn>
                   <v-btn text color="#137547" @click="$refs.dialog2.save(closingDate)">OK</v-btn>

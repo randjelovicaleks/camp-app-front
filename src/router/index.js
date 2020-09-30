@@ -75,43 +75,43 @@ const router = new Router({
 	]
 })
 
-router.beforeEach((to, from, next) => {
-	let token = JSON.parse(sessionStorage.getItem('token'));
-	if (to.fullPath === '/search' || to.name === 'details') {
-		if(!token) {				
-			next('/');
-		}
-	} else if (to.fullPath === '/create' || to.fullPath === '/reservations') {
-		if(token) {
-			if (token.role.authority != 'ROLE_CATERER') {
-				next('/search');
-			}
-		} else {
-			next('/');
-		}
-	} else if (to.name === 'profile' || to.fullPath === '/reservations') {
-		if(token) {
-			if (token.role.authority != 'ROLE_CAMPER') {
-				next('/search');
-			}
-		} else {
-			next('/');
-		}
-	} else if (to.fullPath === '/statistic' || to.fullPath === '/campers' || to.fullPath === '/caterers') {
-		if(token) {
-			if (token.role.authority != 'ROLE_ADMIN') {
-				next('/search');
-			}
-		} else {
-			next('/');
-		}
-	} 
-	if(to.fullPath === '/signin' || to.fullPath === '/signup') {
-			if(token) {
-				next('/search');
-			}
-	}
-	next();
-});
+// router.beforeEach((to, from, next) => {
+// 	let token = JSON.parse(sessionStorage.getItem('token'));
+// 	if (to.fullPath === '/search' || to.name === 'details') {
+// 		if(!token) {				
+// 			next('/');
+// 		}
+// 	} else if (to.fullPath === '/create' || to.fullPath === '/reservations') {
+// 		if(token) {
+// 			if (token.role.authority != 'ROLE_CATERER') {
+// 				next('/search');
+// 			}
+// 		} else {
+// 			next('/');
+// 		}
+// 	} else if (to.name === 'profile' || to.fullPath === '/reservations') {
+// 		if(token) {
+// 			if (token.role.authority != 'ROLE_CAMPER') {
+// 				next('/search');
+// 			}
+// 		} else {
+// 			next('/');
+// 		}
+// 	} else if (to.fullPath === '/statistic' || to.fullPath === '/campers' || to.fullPath === '/caterers') {
+// 		if(token) {
+// 			if (token.role.authority != 'ROLE_ADMIN') {
+// 				next('/search');
+// 			}
+// 		} else {
+// 			next('/');
+// 		}
+// 	} 
+// 	if(to.fullPath === '/signin' || to.fullPath === '/signup') {
+// 			if(token) {
+// 				next('/search');
+// 			}
+// 	}
+// 	next();
+// });
 
 export default router;

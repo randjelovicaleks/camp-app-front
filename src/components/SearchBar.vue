@@ -51,11 +51,11 @@
                   outlined
                   dense
                   dark
-                  v-on="on"
+                  v-on="on" 
                 ></v-text-field>
                 </ValidationProvider>
               </template>
-              <v-date-picker color="#137547" v-model="dateFrom" scrollable>
+              <v-date-picker color="#137547" v-model="dateFrom" scrollable :min="new Date().toISOString()">
                 <v-spacer></v-spacer>
                 <v-btn text color="#137547" @click="modal = false">Cancel</v-btn>
                 <v-btn text color="#137547" @click="$refs.dialog.save(dateFrom)">OK</v-btn>
@@ -91,7 +91,7 @@
                 ></v-text-field>
                 </ValidationProvider>
               </template>
-              <v-date-picker color="#137547" v-model="dateTo" scrollable>
+              <v-date-picker color="#137547" v-model="dateTo" scrollable :min="new Date().toISOString()">
                 <v-spacer></v-spacer>
                 <v-btn text color="#137547" @click="modal2 = false">Cancel</v-btn>
                 <v-btn text color="#137547" @click="$refs.dialog2.save(dateTo)">OK</v-btn>

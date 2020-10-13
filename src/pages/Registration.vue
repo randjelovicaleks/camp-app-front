@@ -280,7 +280,6 @@ export default {
               this.snackbar = true;
               this.snackbarText = "Registration is failed. Please try again."
             }
-            //this.clear();
           }
         });
     },

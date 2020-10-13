@@ -28,7 +28,6 @@ Vue.component("ValidationProvider", ValidationProvider);
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyDFPh89LEYEvNeGj3gkugEsSQFapZ8STnU',
     libraries: "places"
   }
 });

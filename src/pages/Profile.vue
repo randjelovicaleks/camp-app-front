@@ -61,7 +61,7 @@
         </v-col>
       </v-row>
       <v-row class="reset pa-5" v-show="sharedCampsites.length === 0 && !campersProfile && isFollowing" align="center" justify="center">
-        <h3 class="mb-5 lock-text">There is no shared places for this camper</h3>
+        <h3 class="mb-5 lock-text">There is no shared sites for this camper</h3>
       </v-row>
       <v-row class="reset pa-5" v-show="!isFollowing && !campersProfile" align="center" justify="center">
         <div align="center" justify="center" class="c-container">

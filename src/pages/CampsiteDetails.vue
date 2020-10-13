@@ -265,7 +265,8 @@
             <v-avatar size="38" color="#137547">
               <span class="white--text headline"><router-link class="custom-link-avatar" :to="`/profile/${comment.camperDTO.id}`">{{getInitials(comment.camperDTO.name + ' ' + comment.camperDTO.surname)}}</router-link></span>
             </v-avatar>
-            <span class="ml-2"><router-link class="custom-link" :to="`/profile/${comment.camperDTO.id}`">{{comment.camperDTO.name + ' ' + comment.camperDTO.surname}}</router-link></span>
+            <span v-show="token.role.authority === 'ROLE_CAMPER'" class="ml-2"><router-link class="custom-link" :to="`/profile/${comment.camperDTO.id}`">{{comment.camperDTO.name + ' ' + comment.camperDTO.surname}}</router-link></span>
+            <span v-show="token.role.authority != 'ROLE_CAMPER'" class="ml-2">{{comment.camperDTO.name + ' ' + comment.camperDTO.surname}}</span>
             <v-spacer></v-spacer>
             <span
               class="mr-3 comment-date"

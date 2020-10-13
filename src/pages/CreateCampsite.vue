@@ -373,9 +373,6 @@ export default {
       this.latitude = newPosition.lat();
       this.longitude = newPosition.lng();
       this.locationText = `Latitude: ${this.latitude}, Longitude: ${this.longitude}`;
-      console.log(
-        `New marker position is latitude: ${this.latitude} and longitude: ${this.longitude}`
-      );
     },
     previewImage() {
       const reader = new FileReader();
